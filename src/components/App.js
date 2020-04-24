@@ -1,9 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import Logo from './Logo';
-import ItemGrid from './ItemGrid';
-import GlobalStyles from './GlobalStyles';
+import Logo from "./Logo";
+import ItemGrid from "./ItemGrid";
+import GlobalStyles from "./GlobalStyles";
+
+import Cart from "./Cart";
 
 const App = () => {
   return (
@@ -15,6 +17,10 @@ const App = () => {
         <ItemGrid />
       </ItemGridWrapper>
 
+      <CartWrapper>
+        <Cart />
+      </CartWrapper>
+
       <GlobalStyles />
     </Wrapper>
   );
@@ -22,6 +28,10 @@ const App = () => {
 
 const Wrapper = styled.div`
   position: relative;
+  display: grid;
+  grid-template-areas:
+    "  header sidebar"
+    " main sidebar";
 `;
 
 const Header = styled.header`
